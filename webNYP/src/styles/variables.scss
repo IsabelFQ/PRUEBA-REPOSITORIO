@@ -1,0 +1,22 @@
+// --- PALETA DE COLORES ---
+$bg-main: #f8f9fa;  //gris clarito para el fondo general
+$bg-card: #ffffff; //blanco puro para las tarjetas/nodos
+$primary: #e94e89; //el rosa del logo (para botones y activos)
+$primary-light: #eadd; //Un morado my suave para fondos de botones o hovers
+$text-dark: #1a1a1a; // casi negro para títulos
+$text-muted: #6c757d; //Gris para textos secundarios o descripciones
+$border-color: #dee2e6; //Gris suave para bordes de nodos 
+$white: #ffffff;
+$dark: #08060d;
+$secundary: #f39237; //Este es el naranja del logo de Enyp
+
+// --- TIPOGRAFÍA --- 
+$font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+// --- SOMBRAS ---
+$shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.5);
+$shadow-medium: 0 8px 15px rgba(0, 0, 0, 0.1);
+
+// --- BORDES ---
+$radius-md: 8px;
+$radius-lg: 12px;
