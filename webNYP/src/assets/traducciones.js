@@ -1,10 +1,25 @@
 export const traducciones = {
     ES: {
-        servicios:"SERVICIOS", innovacion:"INNOVACIÓN", financiacion:"FINANCIACIÓN", consultoria:"FINANCIACIÓN ESTRATÉGICA", proyectos:"PROYECTOS", contacto:"CONTACTO", acceso:"ACCESO CLIENTE", empezar:"EMPEZAR PROYECTOS"
-
-    },
+        servicios:"SERVICIOS",consultoria: "CONSULTORÍA ESTRATÉGICA",
+    asistencia: "ASISTENCIA TÉCNICA",
+    fondos: "FONDOS EUROPEOS",
+    innovacion: "INNOVACIÓN Y DIGITALIZACIÓN",
+    proyectos: "PROYECTOS",
+    contacto: "CONTACTO",
+    formacion: "FORMACIÓN",
+    acceso: "ACCESO CLIENTE",
+    empezar: "EMPEZAR PROYECTO"
+  },
 
     EN: {
-    servicios:"SERVICES", innovacion:"INNOVATION", financiacion:"FINANCING", consultoria:"STRATEGIC FINANCING", proyectos:"PROYECTS", contacto:"CONTACT", acceso:"CLIENT ACCESS", empezar:"START PROJECT"
-    }
+    servicios:"SERVICES", consultoria: "STRATEGIC CONSULTING",
+    asistencia: "TECHNICAL ASSISTANCE",
+    fondos: "EUROPEAN FUNDS",
+    innovacion: "INNOVATION & DIGITALIZATION",
+    proyectos: "PROJECTS",
+    contacto: "CONTACT",
+    formacion: "TRAINING",
+    acceso: "CLIENT ACCESS",
+    empezar: "START PROJECT"
+  }
 };

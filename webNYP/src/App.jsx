@@ -56,7 +56,7 @@ function App() {
           <li>Fortalecimiento institucional y la profesionalización de entidades</li>
         </ul>
 
-        <button className="btn-service">Solicitar asesoramiento →</button>
+        <button className="btn-service">Más información →</button>
       </div>
 
       {/* CARD 2 */}
@@ -71,7 +71,7 @@ function App() {
   <li>Gestión de convenios y programas públicos</li>
 </ul>
 
-<button className="btn-service">Solicitar asistencia técnica →</button>
+<button className="btn-service">Más información →</button>
       </div>
 
       <div className="service-card">
@@ -85,7 +85,7 @@ function App() {
   <li>Coordinación y cumplimiento normativo</li>
 </ul>
 
-<button className="btn-service">Gestionar financiación →</button>
+<button className="btn-service">Más información →</button>
       </div>
 
       <div className="service-card">
@@ -99,7 +99,7 @@ function App() {
   <li>Ciberseguridad y protección de datos</li>
 </ul>
 
-<button className="btn-service">Impulsar innovación →</button>
+<button className="btn-service">Más información →</button>
       </div>
 
     </div>
@@ -107,7 +107,7 @@ function App() {
 </section>
 
 {/* SECCIÓN: programas formativos */}
-        <section id="quienes-somos" className="section-white">
+        <section id="formacion" className="section-white">
           <div className="container">
             <h2 className="section-title">Programas formativos</h2>
             
@@ -149,6 +149,57 @@ function App() {
             </div>
           </div>
         </section>
+         {/* SECCIÓN: Cómo trabajamos */}
+<section id="como-trabajamos" className="section-work">
+
+  <div className="work-container">
+
+    {/* IZQUIERDA */}
+    <div className="work-content">
+
+      <h2 className="work-title">
+        Cómo trabajamos
+      </h2>
+
+      <p className="work-text">
+        Acompañamos a empresas y entidades públicas
+        mediante soluciones estratégicas, innovación
+        y transformación digital.
+      </p>
+
+      {/* BLOQUES */}
+      <div className="work-grid">
+
+        <div className="work-box">
+          Diagnóstico estratégico
+        </div>
+
+        <div className="work-box">
+          Planificación y financiación
+        </div>
+
+        <div className="work-box">
+          Implementación de proyectos
+        </div>
+
+        <div className="work-box">
+          Transformación digital
+        </div>
+
+        <div className="work-box">
+          Seguimiento y evaluación
+        </div>
+
+        <div className="work-box">
+          Innovación y sostenibilidad
+        </div>
+
+      </div>
+
+    </div>
+            </div>
+        </section>
+
 
       </main>
 
