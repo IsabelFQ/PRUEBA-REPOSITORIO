@@ -21,7 +21,7 @@
   position: relative;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-
+  padding-top: 90px;
   // Contenedor del video de fondo del hero
   .video-container {
     position: absolute;
@@ -31,6 +31,8 @@
     height: 100vh;
     z-index: -1;
     overflow: hidden;
+  
+
 
     // Video de fondo
     .video-bg {
@@ -49,6 +51,7 @@
       height: 100%;
       background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.4) 100%);
     }
+   
   }
 
   // Logo principal del hero

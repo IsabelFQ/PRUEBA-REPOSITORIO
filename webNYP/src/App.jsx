@@ -1,11 +1,31 @@
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+{/* COMPONENTES */}
+import Navbar from "./components/Navbar";
+
+/* PÁGINAS */
+import Consultoria from "./pages/Consultoria";
+import AsistenciaTecnica from "./pages/AsistenciaTecnica";
+import FondosEuropeos from "./pages/FondosEuropeos";
+import Innovacion from "./pages/Innovacion";
+import Login from "./pages/Login";
+
+{/* ASSETS */}
 import videoFondo from "./assets/video.mp4";
 import logoEnyp from "./assets/logo-Enyp.png";
-import img2 from './assets/img2.webp';
-import "./App.scss";
-import Navbar from "./components/Navbar"; 
+import img2 from "./assets/img2.webp";
 
-function App() {
+/* TRADUCCIONES */
+import traducciones from "./assets/traducciones";
+
+/* ESTILOS */
+import "./App.scss";
+
+{/* ======================
+   HOME (CON TODO EL SCROLL)
+   ====================== */}
+function Home({ idioma, setIdioma }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -14,199 +34,207 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar /> 
+
+      {/* NAVBAR */}
+      <Navbar idioma={idioma} setIdioma={setIdioma} />
+
+      {/* VIDEO HERO */}
       <div className="video-container">
         <video autoPlay loop muted playsInline className="video-bg">
           <source src={videoFondo} type="video/mp4" />
         </video>
-        <div className="overlay"></div> 
+        <div className="overlay"></div>
       </div>
 
-      <header className={`hero ${visible ? 'is-visible' : ''}`}>
+      {/* HERO */}
+      <header className={`hero ${visible ? "is-visible" : ""}`}>
         <div className="hero-content">
-          <img src={logoEnyp}
-          alt="Logo Enyp Hub"
-          className= "main-logo"/>
-          <p>Innovación, Financiación & Impacto</p>
-          <div className="descubre">Consultoría Estratégica</div>
-          <button className="cta-button">Empezar Proyecto</button>
+          <img
+            src={logoEnyp}
+            alt="Logo Enyp Hub"
+            className="main-logo"
+          />
+
+          <p>{traducciones[idioma].heroTexto}</p>
+
+          <div className="descubre">
+            {traducciones[idioma].consultoriaEstrategica}
+          </div>
+
+          <button className="cta-button">
+            {traducciones[idioma].empezarProyecto}
+          </button>
         </div>
       </header>
-      {/* --- AQUÍ EMPIEZA LO NUEVO --- */}
-      
-      <main>
-        
-        {/* SECCIÓN: ¿Qué hacemos? */}
-<section id="que-hacemos" className="section-dark">
-  <div className="container">
+
     
-    <h2 className="section-title-dark">¿Qué hacemos?</h2>
+      <main>
 
-    <div className="services-grid">
-
-      {/* CARD 1 */}
-      <div className="service-card">
-        <h3><span>Consultoría</span> estratégica</h3>
-        <p className="subtitle"><strong>Empresarial</strong> y de gestión</p>
-
-        <ul>
-          <li>Mejora de la competitividad y la eficiencia organizativa</li>
-          <li>Optimización de procesos y estructuras</li>
-          <li>Transformación digital y la innovación</li>
-          <li>Fortalecimiento institucional y la profesionalización de entidades</li>
-        </ul>
-
-        <button className="btn-service">Más información →</button>
-      </div>
-
-      {/* CARD 2 */}
-      <div className="service-card">
-        <h3><span>Asistencia</span> técnica</h3>
-<p className="subtitle"><strong>Administración</strong> Pública</p>
-
-<ul>
-  <li>Elaboración de estudios y planes estratégicos</li>
-  <li>Ejecución y seguimiento de proyectos públicos</li>
-  <li>Evaluación y control de actuaciones</li>
-  <li>Gestión de convenios y programas públicos</li>
-</ul>
-
-<button className="btn-service">Más información →</button>
-      </div>
-
-      <div className="service-card">
-        <h3><span>Fondos</span> europeos</h3>
-<p className="subtitle"><strong>Financiación</strong> y subvenciones</p>
-
-<ul>
-  <li>Búsqueda de oportunidades de financiación</li>
-  <li>Gestión integral de proyectos (PMO)</li>
-  <li>Justificación técnica y económica</li>
-  <li>Coordinación y cumplimiento normativo</li>
-</ul>
-
-<button className="btn-service">Más información →</button>
-      </div>
-
-      <div className="service-card">
-        <h3><span>Innovación</span> y digitalización</h3>
-<p className="subtitle"><strong>I+D+i</strong> y tecnología</p>
-
-<ul>
-  <li>Desarrollo de proyectos de innovación</li>
-  <li>Transformación digital de organizaciones</li>
-  <li>Implantación de soluciones tecnológicas</li>
-  <li>Ciberseguridad y protección de datos</li>
-</ul>
-
-<button className="btn-service">Más información →</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-{/* SECCIÓN: programas formativos */}
-        <section id="formacion" className="section-white">
+        {/* ¿QUÉ HACEMOS? */}
+        <section id="que-hacemos" className="section-dark">
           <div className="container">
-            <h2 className="section-title">Programas formativos</h2>
+            <h2 className="section-title-dark">
+              {traducciones[idioma].queHacemos}
+            </h2>
+
+            <div className="services-grid">
+
+              <div className="service-card">
             
-            <div className="cards-grid">
-              <div className="card">
-                <div className="card-image"><img src={img2} alt="img1Prueba" /> </div>
-                <div className="card-content">
-                <h3>Emprendimiento y gestión empresarial</h3>
-                <p>Personas y familias que buscan en la Fundación el instrumento para llevar a cabo objetivos...</p>
-                <button className="btn-more">SABER MÁS →</button>
-              </div>
-              </div>
+        <h3>
+            <span>{traducciones[idioma].consultoriaTitulo}</span>{" "}
+            {traducciones[idioma].consultoriaTipo}
+          </h3>
 
-              <div className="card">
-                <div className="card-image"> <img src={img2} alt="img1Prueba" /> </div>
-                <div className="card-content">
-                <h3>Innovación y digitalización</h3>
-                <p>Colectivos y Asociaciones de carácter personal o profesional que necesitan del régimen fiscal...</p>
-                <button className="btn-more">SABER MÁS →</button>
-              </div>
-              </div>
+        
 
-              <div className="card">
-                <div className="card-image"> <img src={img2} alt="img1Prueba" /> </div>
-                <div className="card-content">
-                <h3>Políticas públicas y desarrollo territorial</h3>
-                <p>Marcas, compañías y empresas que necesitan desarrollar su actividad de responsabilidad corporativa...</p>
-                <button className="btn-more">SABER MÁS →</button>
-              </div>
-              </div>
-              <div className="card">
-                <div className="card-image"> <img src={img2} alt="img1Prueba" /> </div>
-                <div className="card-content">
-                <h3>Igualdad de género, sostenibilidad y cooperación internacional</h3>
-                <p>Marcas, compañías y empresas que necesitan desarrollar su actividad de responsabilidad corporativa...</p>
-                <button className="btn-more">SABER MÁS →</button>
-              </div>
-              </div>
-            </div>
-          </div>
-        </section>
-         {/* SECCIÓN: Cómo trabajamos */}
-<section id="como-trabajamos" className="section-work">
+          <p className="subtitle">
+            <strong>{traducciones[idioma].consultoriaAmbitoStrong}</strong>{" "}
+            {traducciones[idioma].consultoriaAmbito}
+          </p>
 
-  <div className="work-container">
+          <ul>
+            <li>{traducciones[idioma].consultoriaLi1}</li>
+            <li>{traducciones[idioma].consultoriaLi2}</li>
+            <li>{traducciones[idioma].consultoriaLi3}</li>
+            <li>{traducciones[idioma].consultoriaLi4}</li>
+          </ul>
 
-    {/* IZQUIERDA */}
-    <div className="work-content">
+          <button className="btn-service">
+            {traducciones[idioma].masInfo} →
+          </button>
+        </div>
 
-      <h2 className="work-title">
-        Cómo trabajamos
+        {/* ASISTENCIA TÉCNICA */}
+        <div className="service-card">
+          <h3>
+            <span>{traducciones[idioma].asistenciaTitulo}</span>{" "}
+            {traducciones[idioma].asistenciaTipo}
+          </h3>
+
+          <p className="subtitle">
+            <strong>{traducciones[idioma].asistenciaAmbitoStrong}</strong>{" "}
+            {traducciones[idioma].asistenciaAmbito}
+          </p>
+
+          <ul>
+            <li>{traducciones[idioma].asistenciaLi1}</li>
+            <li>{traducciones[idioma].asistenciaLi2}</li>
+            <li>{traducciones[idioma].asistenciaLi3}</li>
+            <li>{traducciones[idioma].asistenciaLi4}</li>
+          </ul>
+
+          <button className="btn-service">
+            {traducciones[idioma].masInfo} →
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* PROGRAMAS FORMATIVOS*/}
+  <section id="formacion" className="section-white">
+    <div className="container">
+      <h2 className="section-title">
+        {traducciones[idioma].formacion}
       </h2>
 
-      <p className="work-text">
-        Acompañamos a empresas y entidades públicas
-        mediante soluciones estratégicas, innovación
-        y transformación digital.
-      </p>
+      <div className="cards-grid">
 
-      {/* BLOQUES */}
-      <div className="work-grid">
-
-        <div className="work-box">
-          Diagnóstico estratégico
+        <div className="card">
+          <div className="card-image">
+            <img src={img2} alt="Formación 1" />
+          </div>
+          <div className="card-content">
+            <h3>{traducciones[idioma].emprendimiento}</h3>
+            <p>{traducciones[idioma].textoEmprendimiento}</p>
+            <button className="btn-more">
+              {traducciones[idioma].masInfo} →
+            </button>
+          </div>
         </div>
 
-        <div className="work-box">
-          Planificación y financiación
+        <div className="card">
+          <div className="card-image">
+            <img src={img2} alt="Formación 2" />
+          </div>
+          <div className="card-content">
+            <h3>{traducciones[idioma].innovacionFormacion}</h3>
+            <p>{traducciones[idioma].innovacionFormacionTexto}</p>
+            <button className="btn-more">
+              {traducciones[idioma].masInfo} →
+            </button>
+          </div>
         </div>
 
-        <div className="work-box">
-          Implementación de proyectos
-        </div>
-
-        <div className="work-box">
-          Transformación digital
-        </div>
-
-        <div className="work-box">
-          Seguimiento y evaluación
-        </div>
-
-        <div className="work-box">
-          Innovación y sostenibilidad
+        <div className="card">
+          <div className="card-image">
+            <img src={img2} alt="Formación 3" />
+          </div>
+          <div className="card-content">
+            <h3>{traducciones[idioma].politicasPublicas}</h3>
+            <p>{traducciones[idioma].politicasPublicasTexto}</p>
+            <button className="btn-more">
+              {traducciones[idioma].masInfo} →
+            </button>
+          </div>
         </div>
 
       </div>
+    </div>
+  </section>
+
+ {/* =====================
+      CÓMO TRABAJAMOS
+      ===================== */}
+  <section id="como-trabajamos" className="section-work">
+    <div className="work-container">
+      <div className="work-content">
+
+        <h2 className="work-title">
+          {traducciones[idioma].comoTrabajamos}
+        </h2>
+
+        <p className="work-text">
+          {traducciones[idioma].comoTrabajamosTexto}
+        </p>
+
+        <div className="work-grid">
+          <div className="work-box">{traducciones[idioma].workBox1}</div>
+          <div className="work-box">{traducciones[idioma].workBox2}</div>
+          <div className="work-box">{traducciones[idioma].workBox3}</div>
+          <div className="work-box">{traducciones[idioma].workBox4}</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+        
+     {/* ===== FIN DEL SCROLL ===== */}
 
     </div>
-            </div>
-        </section>
+  );
+}
 
+{/*=== APP ===*/}
+function App() {
+  const [idioma, setIdioma] = useState("es");
 
-      </main>
-
-      {/* --- AQUÍ TERMINA LO NUEVO --- */}
-
-       
-    </div> // Cierre de <div className="App">
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={<Home idioma={idioma} setIdioma={setIdioma} />}
+      />
+      <Route path="/consultoria" element={<Consultoria />} />
+      <Route path="/asistencia" element={<AsistenciaTecnica />} />
+      <Route path="/fondos" element={<FondosEuropeos />} />
+      <Route path="/innovacion" element={<Innovacion />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 }
 
